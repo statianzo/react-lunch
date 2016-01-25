@@ -1,2 +1,6 @@
 import React from 'react';
-console.log('made it!');
+import {render} from 'react-dom';
+import App from './components/App';
+
+
+render(<App />, document.getElementById('app'));

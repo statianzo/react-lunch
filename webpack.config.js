@@ -2,7 +2,7 @@ module.exports = {
   entry: './src/index.js',
   module: {
     loaders: [
-      {test: /\.js$/, loaders: ['babel']}
+      {test: /\.js$/, exclude: /node_modules/, loaders: ['babel']}
     ]
   }
 };
