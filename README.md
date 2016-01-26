@@ -28,15 +28,12 @@ open http://localhost:8080
 
 # JSX
 
---
 - DSL for creating markup components within JavaScript
---
 - HTML in my JS? Yuck!
---
 - *Optional*, but highly recommended
---
 - Compiled using the Babel transpiler
 
+--
 
 ## HTML Primitives
 
