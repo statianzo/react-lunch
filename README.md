@@ -28,8 +28,21 @@ open http://localhost:8080
 
 # JSX
 
+--
+- DSL for creating markup components within JavaScript
+--
+- HTML in my JS? Yuck!
+--
+- *Optional*, but highly recommended
+--
+- Compiled using the Babel transpiler
+
+
+## HTML Primitives
+
 ```
-return <a href='http://example.com'>Click here</a>
+var url = 'http://example.com';
+return <a href={url}>Click here</a>
 ```
 
 --
@@ -42,7 +55,70 @@ return React.createElement(
 );
 ```
 
+## Components
+
+A component is a custom element composed of primitives or
+other components. Think Angular directives.
+
+```
+import ProfilePicture from './ProfilePicture';
+
+return <ProfilePicture userId={123}>
+  <img src='/fallback.jpg' />
+</ProfilePicture>
+```
+
+--
+
+```
+return React.createElement(
+  ProfilePicture,
+  { userId: 123 },
+  React.createElement('img',
+    { src: '/fallback.jpg' }
+  )
+);
+```
+
 ---
 
-# 
+# Virtual DOM
+
+- Consistent pure JS representation of DOM
+- Diff based updating
+- Render everything, React will figure it out
+- Attaches to actual DOM with ReactDOM.render(ReactElement, DOMElement);
+
+
+## First render
+
+```
+ReactDOM.render(<div className='container'>
+  <div className='profile'>
+    <h1 className='username'>linus</h1>
+  </div>
+</div>
+, document.getElementById('app'));
+```
+
+
+## Second render
+```
+ReactDOM.render(<div className='container'>
+  <div className='profile'>
+    <h1 className='username'>theo</h1>
+  </div>
+</div>
+, document.getElementById('app'));
+```
+
+Only the h1 will be modified.
+
+---
+
+# A simple example
+
+Open up `src/index.js`
+
+
 
