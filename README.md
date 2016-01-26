@@ -96,8 +96,11 @@ return React.createElement(
 - Render everything, React will figure it out
 - Attaches to actual DOM with ReactDOM.render(ReactElement, DOMElement);
 
+---
 
-## First render
+# First render
+
+Username of *linus*
 
 ```
 ReactDOM.render(<div className='container'>
@@ -108,8 +111,12 @@ ReactDOM.render(<div className='container'>
 , document.getElementById('app'));
 ```
 
+---
 
-## Second render
+# Second render
+
+Username of *theo*
+
 ```
 ReactDOM.render(<div className='container'>
   <div className='profile'>
@@ -148,7 +155,13 @@ They are available within the component on `this.props['propertyName']`.
 
 Props are immutable, and should not be changed.
 
+---
+
+# Exercise
+
 To make our Hello component friendlier, let's pass it a name.
+
+--
 
 Within `render` read from `this.props.name` interpolate into the greeting.
 
@@ -158,15 +171,14 @@ render() {
 }
 ```
 
+--
+
 In `src/index.js` pass a `name` attribute to Hello.
 
 ```
 render(<Hello name='Jason'/>, document.getElementById('app'));
 ```
 
-See `src/components/HelloArgs.js`
-
-Components do not inherit props from parent components.
 ---
 
 # State
