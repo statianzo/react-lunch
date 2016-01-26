@@ -181,6 +181,40 @@ Make changes to state using `this.setState()`, not by modifying
 Other lifecycle methods are listed within the [React Docs](https://facebook.github.io/react/docs/component-specs.html#lifecycle-methods).
 ---
 
+# Conditionals and looping
+
+Conditional content and looping are done using regular javascript constructs.
+
+Change `src/index.js` to render a `<Satellite />`
+
+Open `src/components/Satellite.js`
+
+## Conditional content
+
+Within `render()` the `status` variable is set conditionally with a ternary.
+
+## Looping
+
+`directionButtons` is the result of mapping over an array.
+
+When rendering components in a loop, they require a `key` attribute to help
+react identify existing elements. For Angular developers, think `track by` from
+`ng-repeat`.
+
+## Rendering
+
+In JSX, expressions within `{}` will be rendered.
+
+---
+
+# Events
+
+Set up events using `on*` attributes to primitive components.
+
+Change `src/index.js` to render a `<Satellite />`
+
+Open `src/components/Satellite.js`
+
 
 
 
