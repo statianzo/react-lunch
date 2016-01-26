@@ -33,9 +33,11 @@ open http://localhost:8080
 - *Optional*, but highly recommended
 - Compiled using the Babel transpiler
 
---
+---
 
-## HTML Primitives
+# HTML Primitives
+
+JSX:
 
 ```
 var url = 'http://example.com';
@@ -43,6 +45,8 @@ return <a href={url}>Click here</a>
 ```
 
 --
+
+Plain JS:
 
 ```
 return React.createElement(
@@ -52,10 +56,14 @@ return React.createElement(
 );
 ```
 
+---
+
 ## Components
 
 A component is a custom element composed of primitives or
 other components. Think Angular directives.
+
+JSX:
 
 ```
 import ProfilePicture from './ProfilePicture';
@@ -66,6 +74,8 @@ return <ProfilePicture userId={123}>
 ```
 
 --
+
+Plain JS:
 
 ```
 return React.createElement(
