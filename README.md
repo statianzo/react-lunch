@@ -116,9 +116,29 @@ Only the h1 will be modified.
 
 ---
 
-# A simple example
+# Hello World
 
-Open up `src/index.js`
+## index.html
 
+This is the page's starting HTML. Not much to see.
+
+## src/index.js
+
+This renders a component onto the existing `#app` element.
+
+## src/components/Hello.js
+
+This is a simple component. Just a function that returns a primitive.
+Changes here will reflect the output on the page.
+
+---
+
+# Taking arguments
+
+Arguments passed into components are known as props.
+
+To make our Hello component friendlier, let's pass it a name.
+
+Add a `props` argument to the function and interpolate `props.name` into the greeting.
 
 
