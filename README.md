@@ -154,6 +154,8 @@ render(<Hello name='Jason'/>, document.getElementById('app'));
 ```
 
 See `src/components/HelloArgs.js`
+
+Components do not inherit props from parent components.
 ---
 
 
