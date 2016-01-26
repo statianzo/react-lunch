@@ -137,14 +137,18 @@ Changes here will reflect the output on the page.
 
 Arguments passed into components are known as props.
 
+They are available within the component on `this.props['propertyName']`.
+
+Props are immutable, and should not be changed.
+
 To make our Hello component friendlier, let's pass it a name.
 
-Add a `props` argument to the function and interpolate `props.name` into the greeting.
+Within `render` read from `this.props.name` interpolate into the greeting.
 
 ```
-const Hello = (props) => {
-  return <h1>Hello from React, {props.name}!</h1>;
-};
+render() {
+  return <h1>Hello from React, {this.props.name}!</h1>;
+}
 ```
 
 In `src/index.js` pass a `name` attribute to Hello.
@@ -157,5 +161,26 @@ See `src/components/HelloArgs.js`
 
 Components do not inherit props from parent components.
 ---
+
+# State
+
+Data local to the component used for rendering is known as state and
+accessible as `this.state`;
+
+Change `src/index.js` to render a `<Counter />`
+
+Open `src/components/Counter.js`
+
+Initialize state in constructor.
+
+Make changes to state using `this.setState()`, not by modifying
+`this.state` directly.
+
+`componentDidMount` is a method invoked when a component is attached to DOM.
+`componentWillUnmount` is called before a component is detached from DOM.
+Other lifecycle methods are listed within the [React Docs](https://facebook.github.io/react/docs/component-specs.html#lifecycle-methods).
+---
+
+
 
 
