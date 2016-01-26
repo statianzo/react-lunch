@@ -141,4 +141,19 @@ To make our Hello component friendlier, let's pass it a name.
 
 Add a `props` argument to the function and interpolate `props.name` into the greeting.
 
+```
+const Hello = (props) => {
+  return <h1>Hello from React, {props.name}!</h1>;
+};
+```
+
+In `src/index.js` pass a `name` attribute to Hello.
+
+```
+render(<Hello name='Jason'/>, document.getElementById('app'));
+```
+
+See `src/components/HelloArgs.js`
+---
+
 

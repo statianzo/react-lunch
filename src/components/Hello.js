@@ -1,8 +1,8 @@
 import React from 'react';
 
 // This is a simple component
-const Hello = (props) => {
-  return <h1>Hello from React, {props.name}!</h1>;
+const Hello = () => {
+  return <h1>Hello from React!</h1>;
 };
 
 export default Hello;
