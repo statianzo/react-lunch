@@ -198,6 +198,7 @@ Make changes to state using `this.setState()`, not by modifying
 `componentDidMount` is a method invoked when a component is attached to DOM.
 `componentWillUnmount` is called before a component is detached from DOM.
 Other lifecycle methods are listed within the [React Docs](https://facebook.github.io/react/docs/component-specs.html#lifecycle-methods).
+
 ---
 
 # Conditionals and looping
@@ -208,31 +209,64 @@ Change `src/index.js` to render a `<Satellite />`
 
 Open `src/components/Satellite.js`
 
+
+---
+
 ## Conditional content
 
 Within `render()` the `status` variable is set conditionally with a ternary.
+
+```
+const status = this.state.direction
+  ? <h1>Satellite pointed {this.state.direction}</h1>
+  : <h1>Satellite disabled</h1>;
+```
+
+---
 
 ## Looping
 
 `directionButtons` is the result of mapping over an array.
 
+```
+const directions = ['North', 'South', 'East', 'West'];
+const directionButtons = directions.map((direction) => {
+  return <button key={direction} onClick={() => this.face(direction)}>
+    {direction}
+  </button>;
+});
+```
+
 When rendering components in a loop, they require a `key` attribute to help
 react identify existing elements. For Angular developers, think `track by` from
 `ng-repeat`.
 
-## Rendering
+
+---
+## Rendering variables
 
 In JSX, expressions within `{}` will be rendered.
+
+```
+return <div>
+  {status}
+  {directionButtons}
+</div>;
+```
 
 ---
 
 # Events
 
-Set up events using `on*` attributes to primitive components.
+Wire up event listeners to primitives using `on*` attributes.
 
-Change `src/index.js` to render a `<Satellite />`
+See the `onClick` of `directionButtons`.
 
-Open `src/components/Satellite.js`
+---
+
+
+
+
 
 
 
